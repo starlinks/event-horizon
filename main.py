@@ -195,7 +195,7 @@ class AboutPage(webapp2.RequestHandler):
             not_signed_in_template= jinja_environment.get_template('templates/not_signed_in.html')
             self.response.write(not_signed_in_template.render())
 
-class SavedHandler(webapp2.RequestHandler):
+'''class SavedHandler(webapp2.RequestHandler):
     def get(self):
         user = users.get_current_user()
         if user:
@@ -203,7 +203,7 @@ class SavedHandler(webapp2.RequestHandler):
             self.response.write(template.render({'user': user, 'logout_link': users.create_logout_url('/'), 'nickname': "DEFAULT" if not user else user.nickname(), 'login_link': users.create_login_url('/')}))
         else:
             not_signed_in_template= jinja_environment.get_template('templates/not_signed_in.html')
-            self.response.write(not_signed_in_template.render())
+            self.response.write(not_signed_in_template.render())'''
 #####this is what we have
 
 class FormHandler(webapp2.RequestHandler):
@@ -514,7 +514,7 @@ routes = [
     ('/',MainHandler),
     ('/home', Home),
     ('/about', AboutPage),
-    ('/saved', SavedHandler),
+    #('/saved', SavedHandler),
     ('/romeo', RomeoHandler),
     ('/map', MapHandler),
     ('/forms', FormHandler),
